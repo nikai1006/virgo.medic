@@ -1,0 +1,12 @@
+apply plugin: 'osgi'
+
+jar {
+    manifest {
+        version = project.version
+        name = 'Medic Core Implementation'
+        instruction 'Import-Package', '*'
+        instruction 'Export-Package', '*'
+        attributes( 'Bundle-SymbolicName': 'org.eclipse.virgo.medic.core')
+        attributes( 'Built-By': "Gradle ${gradle.gradleVersion}" )
+    }
+}
