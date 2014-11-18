@@ -1,0 +1,14 @@
+apply plugin: 'osgi'
+
+jar {
+    manifest {
+        version = project.version
+        name = 'Medic Logback Core Fragment'
+        instruction 'Import-Package', 'org.eclipse.virgo.medic.log.logback'
+        instruction 'Export-Package', '*'
+        attributes( 'Bundle-SymbolicName': 'org.eclipse.virgo.medic.logbackcorefragment')
+        attributes( 'Built-By': "Gradle ${gradle.gradleVersion}" )
+// Fragment-Host: ch.qos.logback.core;bundle-version="${ch.qos.logback.core:[=.=.=, +1.0.0)}"
+        attributes( 'Fragment-Host': "ch.qos.logback.core" )
+    }
+}
